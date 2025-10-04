@@ -1,0 +1,9 @@
+{
+  "domain": "openwb",
+  "name": "openWB",
+  "version": "0.1.0",
+  "integration_type": "hub",
+  "requirements": [],
+  "codeowners": ["@owner"],
+  "iot_class": "local_polling"
+}

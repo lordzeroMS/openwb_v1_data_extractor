@@ -1,0 +1,20 @@
+{
+  "title": "openWB",
+  "config": {
+    "step": {
+      "user": {
+        "title": "Connect to openWB",
+        "description": "Enter the host or URL of your openWB instance.",
+        "data": {
+          "host": "Host or URL",
+          "name": "Name"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Failed to connect. Check the host or network and try again.",
+      "invalid_response": "Received unexpected data from the openWB API.",
+      "unknown": "Unexpected error"
+    }
+  }
+}
