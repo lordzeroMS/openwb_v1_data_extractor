@@ -27,3 +27,4 @@ After setup, the integration automatically creates sensors for every key/value p
 - The integration polls the API every 30 seconds.
 - Sensor values are automatically cast to numeric types whenever possible; otherwise the raw string value is used.
 - If the openWB API becomes unreachable, the sensors are marked as unavailable until the connection is restored.
+- Known sensor keys use friendlier translated names (English/German). Additional keys can be mapped in `custom_components/openwb/const.py`.

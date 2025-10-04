@@ -1,0 +1,156 @@
+{
+  "title": "openWB",
+  "config": {
+    "step": {
+      "user": {
+        "title": "Verbindung zu openWB",
+        "description": "Geben Sie den Host oder die URL Ihrer openWB-Installation ein.",
+        "data": {
+          "host": "Host oder URL",
+          "name": "Name"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Verbindung fehlgeschlagen. Bitte Host oder Netzwerk prüfen und erneut versuchen.",
+      "invalid_response": "Unerwartete Daten vom openWB-API erhalten.",
+      "unknown": "Unbekannter Fehler"
+    }
+  },
+  "entity": {
+    "sensor": {
+      "charging_mode": {
+        "name": "Lademodus"
+      },
+      "lp1_plug_state": {
+        "name": "Ladepunkt 1 Steckstatus"
+      },
+      "lp2_plug_state": {
+        "name": "Ladepunkt 2 Steckstatus"
+      },
+      "lp3_plug_state": {
+        "name": "Ladepunkt 3 Steckstatus"
+      },
+      "target_charge_power": {
+        "name": "Ziel-Ladeleistung"
+      },
+      "lp1_charge_power": {
+        "name": "Ladepunkt 1 Leistung"
+      },
+      "lp2_charge_power": {
+        "name": "Ladepunkt 2 Leistung"
+      },
+      "lp3_charge_power": {
+        "name": "Ladepunkt 3 Leistung"
+      },
+      "lp1_total_energy": {
+        "name": "Ladepunkt 1 Energie"
+      },
+      "lp2_total_energy": {
+        "name": "Ladepunkt 2 Energie"
+      },
+      "lp3_total_energy": {
+        "name": "Ladepunkt 3 Energie"
+      },
+      "battery_soc": {
+        "name": "Batterie Ladezustand"
+      },
+      "battery_power": {
+        "name": "Batterieleistung"
+      },
+      "house_consumption": {
+        "name": "Hausverbrauch"
+      },
+      "grid_power": {
+        "name": "Netzleistung"
+      },
+      "pv_power": {
+        "name": "PV-Erzeugung"
+      },
+      "ev_soc": {
+        "name": "Fahrzeug Ladezustand"
+      },
+      "charge_state": {
+        "name": "Ladestatus"
+      },
+      "instant_charge_power": {
+        "name": "Momentane Ladeleistung"
+      },
+      "charge_timer_end": {
+        "name": "Ende Lade-Timer"
+      },
+      "evse_connected": {
+        "name": "EVSE verbunden"
+      },
+      "evse_plugged": {
+        "name": "EVSE eingesteckt"
+      },
+      "wallbox_temperature": {
+        "name": "Wallbox-Temperatur"
+      },
+      "ambient_temperature": {
+        "name": "Umgebungstemperatur"
+      },
+      "outside_temperature": {
+        "name": "Außentemperatur"
+      },
+      "load_management_status": {
+        "name": "Lastmanagement Status"
+      },
+      "load_management_power": {
+        "name": "Lastmanagement Leistung"
+      },
+      "battery_target_soc": {
+        "name": "Batterie Ziel-Ladezustand"
+      },
+      "manual_soc": {
+        "name": "Manueller Ladezustand"
+      },
+      "configured_soc": {
+        "name": "Konfigurierter Ladezustand"
+      },
+      "load_management_power_total": {
+        "name": "Lastmanagement Gesamtleistung"
+      },
+      "lp1_phase_count": {
+        "name": "Ladepunkt 1 Phasen"
+      },
+      "lp2_phase_count": {
+        "name": "Ladepunkt 2 Phasen"
+      },
+      "lp3_phase_count": {
+        "name": "Ladepunkt 3 Phasen"
+      },
+      "phase_l1_current": {
+        "name": "Phase L1 Strom"
+      },
+      "phase_l2_current": {
+        "name": "Phase L2 Strom"
+      },
+      "phase_l3_current": {
+        "name": "Phase L3 Strom"
+      },
+      "lp1_current": {
+        "name": "Ladepunkt 1 Strom"
+      },
+      "lp1_voltage": {
+        "name": "Ladepunkt 1 Spannung"
+      },
+      "lp2_current": {
+        "name": "Ladepunkt 2 Strom"
+      },
+      "lp2_voltage": {
+        "name": "Ladepunkt 2 Spannung"
+      },
+      "lp3_current": {
+        "name": "Ladepunkt 3 Strom"
+      },
+      "lp3_voltage": {
+        "name": "Ladepunkt 3 Spannung"
+      },
+      "load_management_current": {
+        "name": "Lastmanagement Strom"
+      }
+    }
+  }
+}

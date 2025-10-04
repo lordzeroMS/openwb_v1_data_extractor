@@ -9,7 +9,7 @@ from homeassistant.helpers.entity_platform import AddEntitiesCallback
 from homeassistant.helpers.update_coordinator import CoordinatorEntity
 from homeassistant.helpers.typing import StateType
 
-from .const import DOMAIN, normalize_key
+from .const import DOMAIN, SENSOR_NAME_MAP, normalize_key
 from .coordinator import OpenWBDataUpdateCoordinator
 
 
@@ -59,7 +59,12 @@ class OpenWBSensor(CoordinatorEntity[OpenWBDataUpdateCoordinator], SensorEntity)
         self._key = key
         self._entry = entry
         self._attr_unique_id = f"{entry.entry_id}-{key}"
-        self._attr_name = normalize_key(key)
+
+        translation_key = SENSOR_NAME_MAP.get(key)
+        if translation_key is not None:
+            self._attr_translation_key = translation_key
+        else:
+            self._attr_name = normalize_key(key)
 
     @property
     def native_value(self) -> StateType:

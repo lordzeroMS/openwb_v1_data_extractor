@@ -16,5 +16,141 @@
       "invalid_response": "Received unexpected data from the openWB API.",
       "unknown": "Unexpected error"
     }
+  },
+  "entity": {
+    "sensor": {
+      "charging_mode": {
+        "name": "Charging Mode"
+      },
+      "lp1_plug_state": {
+        "name": "Load Point 1 Plug State"
+      },
+      "lp2_plug_state": {
+        "name": "Load Point 2 Plug State"
+      },
+      "lp3_plug_state": {
+        "name": "Load Point 3 Plug State"
+      },
+      "target_charge_power": {
+        "name": "Target Charge Power"
+      },
+      "lp1_charge_power": {
+        "name": "Load Point 1 Power"
+      },
+      "lp2_charge_power": {
+        "name": "Load Point 2 Power"
+      },
+      "lp3_charge_power": {
+        "name": "Load Point 3 Power"
+      },
+      "lp1_total_energy": {
+        "name": "Load Point 1 Energy"
+      },
+      "lp2_total_energy": {
+        "name": "Load Point 2 Energy"
+      },
+      "lp3_total_energy": {
+        "name": "Load Point 3 Energy"
+      },
+      "battery_soc": {
+        "name": "Battery State of Charge"
+      },
+      "battery_power": {
+        "name": "Battery Power"
+      },
+      "house_consumption": {
+        "name": "House Consumption"
+      },
+      "grid_power": {
+        "name": "Grid Power"
+      },
+      "pv_power": {
+        "name": "PV Generation"
+      },
+      "ev_soc": {
+        "name": "Vehicle State of Charge"
+      },
+      "charge_state": {
+        "name": "Charging State"
+      },
+      "instant_charge_power": {
+        "name": "Instantaneous Charge Power"
+      },
+      "charge_timer_end": {
+        "name": "Charge Timer End"
+      },
+      "evse_connected": {
+        "name": "EVSE Connected"
+      },
+      "evse_plugged": {
+        "name": "EVSE Plugged"
+      },
+      "wallbox_temperature": {
+        "name": "Wallbox Temperature"
+      },
+      "ambient_temperature": {
+        "name": "Ambient Temperature"
+      },
+      "outside_temperature": {
+        "name": "Outdoor Temperature"
+      },
+      "load_management_status": {
+        "name": "Load Management Status"
+      },
+      "load_management_power": {
+        "name": "Load Management Power"
+      },
+      "battery_target_soc": {
+        "name": "Battery Target State of Charge"
+      },
+      "manual_soc": {
+        "name": "Manual State of Charge"
+      },
+      "configured_soc": {
+        "name": "Configured State of Charge"
+      },
+      "load_management_power_total": {
+        "name": "Load Management Total Power"
+      },
+      "lp1_phase_count": {
+        "name": "Load Point 1 Phases"
+      },
+      "lp2_phase_count": {
+        "name": "Load Point 2 Phases"
+      },
+      "lp3_phase_count": {
+        "name": "Load Point 3 Phases"
+      },
+      "phase_l1_current": {
+        "name": "Phase L1 Current"
+      },
+      "phase_l2_current": {
+        "name": "Phase L2 Current"
+      },
+      "phase_l3_current": {
+        "name": "Phase L3 Current"
+      },
+      "lp1_current": {
+        "name": "Load Point 1 Current"
+      },
+      "lp1_voltage": {
+        "name": "Load Point 1 Voltage"
+      },
+      "lp2_current": {
+        "name": "Load Point 2 Current"
+      },
+      "lp2_voltage": {
+        "name": "Load Point 2 Voltage"
+      },
+      "lp3_current": {
+        "name": "Load Point 3 Current"
+      },
+      "lp3_voltage": {
+        "name": "Load Point 3 Voltage"
+      },
+      "load_management_current": {
+        "name": "Load Management Current"
+      }
+    }
   }
 }
