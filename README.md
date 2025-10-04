@@ -7,6 +7,12 @@ This project provides a custom [Home Assistant](https://www.home-assistant.io/) 
 1. Copy the `custom_components/openwb` directory into the `custom_components` folder of your Home Assistant configuration.
 2. Restart Home Assistant to load the integration.
 
+### Installing with HACS
+
+1. In HACS, go to **Integrations → Custom Repositories** and add the repository URL.
+2. Pick **Integration** as the category.
+3. Install the newly listed **openWB** integration and restart Home Assistant.
+
 ## Configuration
 
 1. In Home Assistant, go to **Settings → Devices & Services → Add Integration**.

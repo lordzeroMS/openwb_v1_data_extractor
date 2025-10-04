@@ -1,0 +1,10 @@
+{
+  "name": "openWB Integration",
+  "render_readme": true,
+  "domains": [
+    "openwb"
+  ],
+  "country": "ALL",
+  "homeassistant": "2023.0.0",
+  "version_strategy": "commit"
+}
