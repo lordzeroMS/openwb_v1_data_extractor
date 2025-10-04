@@ -56,6 +56,15 @@ class OpenWBSensorDescription(SensorEntityDescription):
     value_fn: Callable[[Any], StateType] | None = None
 
 
+LADEMODUS_MAP: dict[int, str] = {
+    0: "Sofortladen",
+    1: "Min + PV",
+    2: "PV-Überschuss",
+    3: "Stop",
+    4: "Standby",
+}
+
+
 def _parse_timestamp(value: Any) -> StateType:
     if not isinstance(value, str):
         return None
@@ -65,9 +74,18 @@ def _parse_timestamp(value: Any) -> StateType:
         return None
 
 
+def _map_lademodus(value: Any) -> StateType:
+    try:
+        code = int(float(value))
+    except (TypeError, ValueError):
+        return value
+
+    return LADEMODUS_MAP.get(code, value)
+
+
 SENSOR_METADATA: dict[str, SensorMeta] = {
     "date": SensorMeta(device_class=SensorDeviceClass.TIMESTAMP, value_fn=_parse_timestamp),
-    "lademodus": SensorMeta(),
+    "lademodus": SensorMeta(value_fn=_map_lademodus),
     "minimalstromstaerke": SensorMeta(
         native_unit=UnitOfElectricCurrent.AMPERE,
         device_class=SensorDeviceClass.CURRENT,
@@ -109,6 +127,21 @@ SENSOR_METADATA: dict[str, SensorMeta] = {
         state_class=SensorStateClass.TOTAL_INCREASING,
     ),
     "gelrlp3": SensorMeta(
+        native_unit=UnitOfEnergy.KILO_WATT_HOUR,
+        device_class=SensorDeviceClass.ENERGY,
+        state_class=SensorStateClass.TOTAL_INCREASING,
+    ),
+    "llkwhlp1": SensorMeta(
+        native_unit=UnitOfEnergy.KILO_WATT_HOUR,
+        device_class=SensorDeviceClass.ENERGY,
+        state_class=SensorStateClass.TOTAL_INCREASING,
+    ),
+    "llkwhlp2": SensorMeta(
+        native_unit=UnitOfEnergy.KILO_WATT_HOUR,
+        device_class=SensorDeviceClass.ENERGY,
+        state_class=SensorStateClass.TOTAL_INCREASING,
+    ),
+    "llkwhlp3": SensorMeta(
         native_unit=UnitOfEnergy.KILO_WATT_HOUR,
         device_class=SensorDeviceClass.ENERGY,
         state_class=SensorStateClass.TOTAL_INCREASING,
