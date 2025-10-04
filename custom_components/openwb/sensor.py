@@ -9,6 +9,7 @@ from typing import Any, Callable, Final
 from homeassistant.components.sensor import (
     SensorDeviceClass,
     SensorEntity,
+    SensorEntityDescription,
     SensorStateClass,
 )
 from homeassistant.config_entries import ConfigEntry
@@ -42,14 +43,16 @@ def _load_translated_sensor_keys() -> set[str]:
     return {key.lower() for key in sensors}
 
 
-TRANSLATED_SENSOR_KEYS = _load_translated_sensor_keys()
-
-
 @dataclass(frozen=True)
 class SensorMeta:
     native_unit: str | None = None
     device_class: SensorDeviceClass | None = None
     state_class: SensorStateClass | None = None
+    value_fn: Callable[[Any], StateType] | None = None
+
+
+@dataclass(frozen=True)
+class OpenWBSensorDescription(SensorEntityDescription):
     value_fn: Callable[[Any], StateType] | None = None
 
 
@@ -324,6 +327,30 @@ SENSOR_METADATA: dict[str, SensorMeta] = {
     ),
 }
 
+
+TRANSLATED_SENSOR_KEYS = _load_translated_sensor_keys()
+
+
+def _build_descriptions() -> dict[str, OpenWBSensorDescription]:
+    descriptions: dict[str, OpenWBSensorDescription] = {}
+
+    for key in TRANSLATED_SENSOR_KEYS:
+        meta = SENSOR_METADATA.get(key, SensorMeta())
+        descriptions[key] = OpenWBSensorDescription(
+            key=key,
+            translation_key=key,
+            device_class=meta.device_class,
+            native_unit_of_measurement=meta.native_unit,
+            state_class=meta.state_class,
+            value_fn=meta.value_fn,
+        )
+
+    return descriptions
+
+
+SENSOR_DESCRIPTIONS = _build_descriptions()
+
+
 async def async_setup_entry(
     hass: HomeAssistant,
     entry: ConfigEntry,
@@ -370,29 +397,34 @@ class OpenWBSensor(CoordinatorEntity[OpenWBDataUpdateCoordinator], SensorEntity)
         self._key = key
         self._entry = entry
         self._attr_unique_id = f"{entry.entry_id}-{key}"
+        self._value_fn: Callable[[Any], StateType] | None = None
 
-        translation_key = key_to_translation_key(key)
-        self._translation_key = translation_key
-        meta = SENSOR_METADATA.get(translation_key)
-        self._meta = meta
+        lookup_key = key_to_translation_key(key)
+        description = SENSOR_DESCRIPTIONS.get(lookup_key)
 
-        if translation_key in TRANSLATED_SENSOR_KEYS:
-            self._attr_translation_key = translation_key
-            self._attr_name = None
+        if description is not None:
+            self.entity_description = description
+            self._value_fn = description.value_fn
         else:
-            self._attr_name = normalize_key(key)
-
-        if meta is not None:
-            self._attr_native_unit_of_measurement = meta.native_unit
-            self._attr_device_class = meta.device_class
-            self._attr_state_class = meta.state_class
+            meta = SENSOR_METADATA.get(lookup_key)
+            description = OpenWBSensorDescription(
+                key=lookup_key,
+                name=normalize_key(key),
+                device_class=meta.device_class if meta else None,
+                native_unit_of_measurement=meta.native_unit if meta else None,
+                state_class=meta.state_class if meta else None,
+                value_fn=meta.value_fn if meta else None,
+            )
+            self.entity_description = description
+            self._value_fn = description.value_fn
+            self._attr_name = description.name
 
     @property
     def native_value(self) -> StateType:
         """Return the current sensor state."""
         raw = self.coordinator.data.get(self._key)
-        if self._meta and self._meta.value_fn:
-            return self._meta.value_fn(raw)
+        if self._value_fn:
+            return self._value_fn(raw)
         return _coerce_value(raw)
 
     @property
