@@ -19,137 +19,287 @@
   },
   "entity": {
     "sensor": {
-      "charging_mode": {
-        "name": "Charging Mode"
-      },
-      "lp1_plug_state": {
-        "name": "Load Point 1 Plug State"
-      },
-      "lp2_plug_state": {
-        "name": "Load Point 2 Plug State"
-      },
-      "lp3_plug_state": {
-        "name": "Load Point 3 Plug State"
-      },
-      "target_charge_power": {
-        "name": "Target Charge Power"
-      },
-      "lp1_charge_power": {
-        "name": "Load Point 1 Power"
-      },
-      "lp2_charge_power": {
-        "name": "Load Point 2 Power"
-      },
-      "lp3_charge_power": {
-        "name": "Load Point 3 Power"
-      },
-      "lp1_total_energy": {
-        "name": "Load Point 1 Energy"
-      },
-      "lp2_total_energy": {
-        "name": "Load Point 2 Energy"
-      },
-      "lp3_total_energy": {
-        "name": "Load Point 3 Energy"
-      },
-      "battery_soc": {
-        "name": "Battery State of Charge"
-      },
-      "battery_power": {
-        "name": "Battery Power"
-      },
-      "house_consumption": {
-        "name": "House Consumption"
-      },
-      "grid_power": {
-        "name": "Grid Power"
-      },
-      "pv_power": {
-        "name": "PV Generation"
-      },
-      "ev_soc": {
-        "name": "Vehicle State of Charge"
-      },
-      "charge_state": {
-        "name": "Charging State"
-      },
-      "instant_charge_power": {
-        "name": "Instantaneous Charge Power"
-      },
-      "charge_timer_end": {
-        "name": "Charge Timer End"
-      },
-      "evse_connected": {
-        "name": "EVSE Connected"
-      },
-      "evse_plugged": {
-        "name": "EVSE Plugged"
-      },
-      "wallbox_temperature": {
-        "name": "Wallbox Temperature"
-      },
-      "ambient_temperature": {
-        "name": "Ambient Temperature"
-      },
-      "outside_temperature": {
+      "aussentemperatur": {
         "name": "Outdoor Temperature"
       },
-      "load_management_status": {
-        "name": "Load Management Status"
+      "charger_soc": {
+        "name": "Vehicle State of Charge"
       },
-      "load_management_power": {
-        "name": "Load Management Power"
+      "chargestate": {
+        "name": "Charging State"
       },
-      "battery_target_soc": {
-        "name": "Battery Target State of Charge"
+      "chargestatlp1": {
+        "name": "EVSE Charge State LP1"
       },
-      "manual_soc": {
-        "name": "Manual State of Charge"
+      "chargestatlp2": {
+        "name": "EVSE Charge State LP2"
       },
-      "configured_soc": {
-        "name": "Configured State of Charge"
+      "chargestatlp3": {
+        "name": "EVSE Charge State LP3"
       },
-      "load_management_power_total": {
+      "date": {
+        "name": "Last Update"
+      },
+      "evseconnected": {
+        "name": "EVSE Connected"
+      },
+      "evseplugged": {
+        "name": "EVSE Plugged"
+      },
+      "evua1": {
+        "name": "Grid Power L1"
+      },
+      "evua2": {
+        "name": "Grid Power L2"
+      },
+      "evua3": {
+        "name": "Grid Power L3"
+      },
+      "evubezugwh": {
+        "name": "Grid Import Energy"
+      },
+      "evueinspeisungwh": {
+        "name": "Grid Export Energy"
+      },
+      "evuv1": {
+        "name": "Grid Voltage L1"
+      },
+      "evuv2": {
+        "name": "Grid Voltage L2"
+      },
+      "evuv3": {
+        "name": "Grid Voltage L3"
+      },
+      "evuw": {
+        "name": "Grid Power"
+      },
+      "gelkwhlp1": {
+        "name": "Session Energy LP1"
+      },
+      "gelkwhlp2": {
+        "name": "Session Energy LP2"
+      },
+      "gelkwhlp3": {
+        "name": "Session Energy LP3"
+      },
+      "gelrlp1": {
+        "name": "Cumulative Energy LP1"
+      },
+      "gelrlp2": {
+        "name": "Cumulative Energy LP2"
+      },
+      "gelrlp3": {
+        "name": "Cumulative Energy LP3"
+      },
+      "hausverbrauch": {
+        "name": "House Consumption"
+      },
+      "laadetermin": {
+        "name": "Charge Timer End"
+      },
+      "ladeleistungaktu": {
+        "name": "Instantaneous Charge Power"
+      },
+      "lademodus": {
+        "name": "Charging Mode"
+      },
+      "ladestartzeitlp1": {
+        "name": "Charge Start Time LP1"
+      },
+      "ladestartzeitlp2": {
+        "name": "Charge Start Time LP2"
+      },
+      "ladestartzeitlp3": {
+        "name": "Charge Start Time LP3"
+      },
+      "ladestatuslp1": {
+        "name": "Charging Status LP1"
+      },
+      "ladestatuslp2": {
+        "name": "Charging Status LP2"
+      },
+      "ladestatuslp3": {
+        "name": "Charging Status LP3"
+      },
+      "ladungaktivlp1": {
+        "name": "Charging Active LP1"
+      },
+      "ladungaktivlp2": {
+        "name": "Charging Active LP2"
+      },
+      "ladungaktivlp3": {
+        "name": "Charging Active LP3"
+      },
+      "lastmanagementw": {
         "name": "Load Management Total Power"
       },
-      "lp1_phase_count": {
-        "name": "Load Point 1 Phases"
+      "lfm_status": {
+        "name": "Load Management Status"
       },
-      "lp2_phase_count": {
-        "name": "Load Point 2 Phases"
+      "lfm_w": {
+        "name": "Load Management Power"
       },
-      "lp3_phase_count": {
-        "name": "Load Point 3 Phases"
+      "lfmampere": {
+        "name": "Load Management Current"
       },
-      "phase_l1_current": {
-        "name": "Phase L1 Current"
+      "lla1lp1": {
+        "name": "LP1 Phase L1 Current"
       },
-      "phase_l2_current": {
-        "name": "Phase L2 Current"
+      "lla1lp2": {
+        "name": "LP2 Phase L1 Current"
       },
-      "phase_l3_current": {
-        "name": "Phase L3 Current"
+      "lla1lp3": {
+        "name": "LP3 Phase L1 Current"
       },
-      "lp1_current": {
+      "lla2lp1": {
+        "name": "LP1 Phase L2 Current"
+      },
+      "lla2lp2": {
+        "name": "LP2 Phase L2 Current"
+      },
+      "lla2lp3": {
+        "name": "LP3 Phase L2 Current"
+      },
+      "lla3lp1": {
+        "name": "LP1 Phase L3 Current"
+      },
+      "lla3lp2": {
+        "name": "LP2 Phase L3 Current"
+      },
+      "lla3lp3": {
+        "name": "LP3 Phase L3 Current"
+      },
+      "llapl1": {
         "name": "Load Point 1 Current"
       },
-      "lp1_voltage": {
-        "name": "Load Point 1 Voltage"
-      },
-      "lp2_current": {
+      "llapl2": {
         "name": "Load Point 2 Current"
       },
-      "lp2_voltage": {
-        "name": "Load Point 2 Voltage"
-      },
-      "lp3_current": {
+      "llapl3": {
         "name": "Load Point 3 Current"
       },
-      "lp3_voltage": {
+      "llgesamt": {
+        "name": "Total Charge Power"
+      },
+      "llkwhlp1": {
+        "name": "Total Charge Energy LP1"
+      },
+      "llkwhlp2": {
+        "name": "Total Charge Energy LP2"
+      },
+      "llkwhlp3": {
+        "name": "Total Charge Energy LP3"
+      },
+      "lllp1": {
+        "name": "Load Point 1 Power"
+      },
+      "lllp2": {
+        "name": "Load Point 2 Power"
+      },
+      "lllp3": {
+        "name": "Load Point 3 Power"
+      },
+      "llsoll": {
+        "name": "Target Charge Current"
+      },
+      "llvpl1": {
+        "name": "Load Point 1 Voltage"
+      },
+      "llvpl2": {
+        "name": "Load Point 2 Voltage"
+      },
+      "llvpl3": {
         "name": "Load Point 3 Voltage"
       },
-      "load_management_current": {
-        "name": "Load Management Current"
+      "maximalstromstaerke": {
+        "name": "Maximum Current Setting"
+      },
+      "minimalstromstaerke": {
+        "name": "Minimum Current Setting"
+      },
+      "phasel1amp": {
+        "name": "Phase L1 Current"
+      },
+      "phasel2amp": {
+        "name": "Phase L2 Current"
+      },
+      "phasel3amp": {
+        "name": "Phase L3 Current"
+      },
+      "phasenzahllp1": {
+        "name": "Load Point 1 Phases"
+      },
+      "phasenzahllp2": {
+        "name": "Load Point 2 Phases"
+      },
+      "phasenzahllp3": {
+        "name": "Load Point 3 Phases"
+      },
+      "plugstatlp1": {
+        "name": "Load Point 1 Plug State"
+      },
+      "plugstatlp2": {
+        "name": "Load Point 2 Plug State"
+      },
+      "plugstatlp3": {
+        "name": "Load Point 3 Plug State"
+      },
+      "pvw": {
+        "name": "PV Power"
+      },
+      "pvwh": {
+        "name": "PV Energy"
+      },
+      "restzeitlp1": {
+        "name": "Remaining Time LP1"
+      },
+      "restzeitlp1m": {
+        "name": "Remaining Time LP1 (Minutes)"
+      },
+      "restzeitlp2": {
+        "name": "Remaining Time LP2"
+      },
+      "restzeitlp2m": {
+        "name": "Remaining Time LP2 (Minutes)"
+      },
+      "restzeitlp3": {
+        "name": "Remaining Time LP3"
+      },
+      "restzeitlp3m": {
+        "name": "Remaining Time LP3 (Minutes)"
+      },
+      "soccon": {
+        "name": "Configured State of Charge"
+      },
+      "soclp1": {
+        "name": "Vehicle SOC LP1"
+      },
+      "soclp2": {
+        "name": "Vehicle SOC LP2"
+      },
+      "socmanu": {
+        "name": "Manual State of Charge"
+      },
+      "speicherleistung": {
+        "name": "Battery Power"
+      },
+      "speicherpower": {
+        "name": "Battery Power"
+      },
+      "speichersoc": {
+        "name": "Battery State of Charge"
+      },
+      "speichersocziel": {
+        "name": "Battery Target State of Charge"
+      },
+      "umgebungstemperatur": {
+        "name": "Ambient Temperature"
+      },
+      "wallboxtemp": {
+        "name": "Wallbox Temperature"
+      },
+      "zielladungaktiv": {
+        "name": "Target Charging Active"
       }
     }
   }
