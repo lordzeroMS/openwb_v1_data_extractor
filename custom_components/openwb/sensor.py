@@ -83,6 +83,13 @@ def _map_lademodus(value: Any) -> StateType:
     return LADEMODUS_MAP.get(code, value)
 
 
+def _positive_power(value: Any) -> StateType:
+    try:
+        return abs(float(value))
+    except (TypeError, ValueError):
+        return _coerce_value(value)
+
+
 SENSOR_METADATA: dict[str, SensorMeta] = {
     "date": SensorMeta(device_class=SensorDeviceClass.TIMESTAMP, value_fn=_parse_timestamp),
     "lademodus": SensorMeta(value_fn=_map_lademodus),
@@ -190,6 +197,7 @@ SENSOR_METADATA: dict[str, SensorMeta] = {
         native_unit=UnitOfPower.WATT,
         device_class=SensorDeviceClass.POWER,
         state_class=SensorStateClass.MEASUREMENT,
+        value_fn=_positive_power,
     ),
     "evuv1": SensorMeta(
         native_unit=UnitOfElectricPotential.VOLT,
