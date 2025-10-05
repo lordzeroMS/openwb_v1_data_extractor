@@ -71,7 +71,8 @@ def _parse_timestamp(value: Any) -> StateType:
         return None
     try:
         naive = datetime.strptime(value, "%Y:%m:%d-%H:%M:%S")
-        return naive.replace(tzinfo=dt_util.DEFAULT_TIME_ZONE)
+        localized = naive.replace(tzinfo=dt_util.DEFAULT_TIME_ZONE)
+        return localized.astimezone(dt_util.UTC)
     except ValueError:
         return None
 
