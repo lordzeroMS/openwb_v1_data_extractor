@@ -27,6 +27,7 @@ from homeassistant.const import (
     UnitOfTemperature,
     UnitOfTime,
 )
+from homeassistant.util import dt as dt_util
 
 from .const import DOMAIN, key_to_translation_key, normalize_key
 from .coordinator import OpenWBDataUpdateCoordinator
@@ -69,7 +70,8 @@ def _parse_timestamp(value: Any) -> StateType:
     if not isinstance(value, str):
         return None
     try:
-        return datetime.strptime(value, "%Y:%m:%d-%H:%M:%S")
+        naive = datetime.strptime(value, "%Y:%m:%d-%H:%M:%S")
+        return naive.replace(tzinfo=dt_util.DEFAULT_TIME_ZONE)
     except ValueError:
         return None
 
