@@ -85,7 +85,7 @@ def _map_lademodus(value: Any) -> StateType:
 
 def _positive_power(value: Any) -> StateType:
     try:
-        return abs(float(value))
+        return -float(value)
     except (TypeError, ValueError):
         return _coerce_value(value)
 
